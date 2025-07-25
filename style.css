@@ -54,7 +54,7 @@ section {
     box-shadow: 4px 4px 20px 5px black;
     margin: 15px;
     margin-left: 350px;
-    border-radius: 20px;
+    border-radius: 20px !important;
 }
 
 h2 {
