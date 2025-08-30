@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yomgʻirli Portfolio</title>
+    <style>
+        /* Asosiy fon */
+        body {
+            margin: 0;
+            height: 100vh;
+            background: #1a1a1a;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* Asosiy quti (kontent) */
+        .asosiy-quti {
+            position: relative;
+            z-index: 10;
+            margin-top: -200px;
+            padding: 10px;
+        }
+
+        /* Profil rasmi */
+        .rasm {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+
+        p {
+            font-size: 1rem;
+            margin: 5px 0 15px;
+        }
+
+        /* Havolalar qutisi */
+        .havolalar {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 600px;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        .havolalar a {
+            text-decoration: none;
+            color: #fff;
+            background: #343434;
+            padding: 12px 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+            font-size: 1rem;
+            width: 500px;
+        }
+
+        .havolalar a:hover {
+            background: #949494;
+            color: white;
+        }
+
+        /* Pastki yozuv */
+        .pastki-matn {
+            position: absolute;
+            bottom: 10px;
+            font-size: 14px;
+            color: #ccc;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Yomg'ir effekti */
+        .yomgir {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .tomchi {
+            position: absolute;
+            top: -10vh;
+            width: 2px;
+            height: 20px;
+            background-color: white;
+            opacity: 0.6;
+            border-radius: 2px;
+            filter: blur(0.2px);
+            animation: tushish linear infinite;
+        }
+
+        @keyframes tushish {
+            0% {
+                transform: translateY(-20vh);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(120vh);
+                opacity: 0;
+            }
+        }
+
+        /* Har bir tomchi uchun style (js orqali keladi) */
+        .tomchi {
+            left: var(--chapdan, 50%);
+            animation-duration: var(--davomiylik, 6s);
+            animation-delay: var(--kechikish, 0s);
+            height: var(--uzunlik, 60px);
+            opacity: var(--shaffoflik, 0.6);
+        }
+
+        /* 📱 Telefonlar uchun responsiv */
+        @media (max-width: 768px) {
+            .rasm {
+                width: 90px;
+                height: 90px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .havolalar a {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .rasm {
+                width: 70px;
+                height: 70px;
+            }
+
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 0.8rem;
+            }
+
+            .havolalar {
+                gap: 10px;
+            }
+
+            .havolalar a {
+                font-size: 0.8rem;
+                padding: 8px;
+            }
+
+            .pastki-matn {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Yomg'ir -->
+    <div class="yomgir" id="yomgir"></div>
+
+    <!-- Kontent -->
+    <div class="asosiy-quti">
+        <img src="523713830_17851207500508830_6828121572462767610_n.jpg" alt="Profil rasmi" class="rasm">
+        <h1>Sa'dullayev Jo'shqinbek</h1>
+        <p>Mening rasmiy sahifalarim bilan bog'laning!</p>
+
+        <div class="havolalar">
+            <a href="https://instagram.com/sadullayev_735" target="_blank"> Instagram: @sadullayev_735</a>
+            <a href="https://t.me/sadullayev_735" target="_blank"> Telegram: @sadullayev_735</a>
+            <a href="mailto:joshqinbeksadullayev188@gmail.com"> Email: joshqinbeksadullayev188@gmail.com</a>
+        </div>
+    </div>
+
+    <div class="pastki-matn">
+        © 2025 Jo'shqinbek • Yomgʻirli Portfolio
+    </div>
+
+    <script>
+        const yomgir = document.getElementById('yomgir');
+        const SONI = 80; // Tomchilar soni
+
+        for (let i = 0; i < SONI; i++) {
+            const tomchi = document.createElement('span');
+            tomchi.className = 'tomchi';
+
+            tomchi.style.setProperty('--chapdan', Math.random() * 100 + '%');
+            tomchi.style.setProperty('--davomiylik', (Math.random() * 3 + 5).toFixed(2) + 's');
+            tomchi.style.setProperty('--kechikish', (-Math.random() * 8).toFixed(2) + 's');
+            tomchi.style.setProperty('--uzunlik', (Math.random() * 50 + 20).toFixed(0) + 'px');
+            tomchi.style.setProperty('--shaffoflik', (Math.random() * 0.5 + 0.5).toFixed(2));
+
+            yomgir.appendChild(tomchi);
+        }
+    </script>
+</body>
+
+</html>
