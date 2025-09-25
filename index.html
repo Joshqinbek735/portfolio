@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jo'shqinbek Sa'dullayev Jasur o'g'li - Portfolio</title>
+    <style>
+        :root {
+            --asosiy: #4facfe;
+            --ikkinchi: #00f2fe;
+            --matn: #333;
+            --fon: #f5f5f5;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--fon);
+            color: var(--matn);
+            transition: background 0.4s, color 0.4s;
+        }
+
+        body.dark {
+            --fon: #1e1e1e;
+            --matn: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--asosiy), var(--ikkinchi));
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: #333;
+            padding: 12px 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--ikkinchi);
+        }
+
+        section {
+            padding: 70px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            color: var(--asosiy);
+        }
+
+        .men-haqimda p,
+        .loyihalar p,
+        .boglanish p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .texnologiyalar ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .texnologiyalar ul li {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background 0.3s, color 0.3s;
+            color: #222;
+            /* Oq rejimda qora yozuv */
+        }
+
+        .texnologiyalar ul li:hover {
+            transform: translateY(-5px);
+            background: #e3f2fd;
+        }
+
+        body.dark .texnologiyalar ul li {
+            background: #2c2c2c;
+            /* Dark rejim fon */
+            color: #fff;
+            /* Dark rejim oq yozuv */
+        }
+
+        footer {
+            text-align: center;
+            background: #333;
+            color: white;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: var(--ikkinchi);
+            text-decoration: none;
+        }
+
+        /* Dark mode tugma */
+        .dark-mode-tugma {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--asosiy);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s;
+        }
+
+        .dark-mode-tugma:hover {
+            background: var(--ikkinchi);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Jo'shqinbek Sa'dullayev Jasur o'g'li</h1>
+        <p>Men 14 yoshdaman, dasturlashni 2024-yildan o‘rganyapman, maqsadim senior dasturchi bo‘lish.</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#men-haqimda">Men haqimda</a></li>
+            <li><a href="#texnologiyalar">Texnologiyalar</a></li>
+            <li><a href="#loyihalar">Loyihalar</a></li>
+            <li><a href="#boglanish">Bog‘lanish</a></li>
+        </ul>
+    </nav>
+
+    <!-- Men haqimda -->
+    <section id="men-haqimda" class="men-haqimda">
+        <h2>Men haqimda</h2>
+        <p>Men 14 yoshdaman, dasturlashni 2024-yildan o‘rganyapman, maqsadim senior dasturchi bo‘lish.</p>
+    </section>
+
+    <!-- Texnologiyalar -->
+    <section id="texnologiyalar" class="texnologiyalar">
+        <h2>Texnologiyalar</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+    </section>
+
+    <!-- Loyihalar -->
+    <section id="loyihalar" class="loyihalar">
+        <h2>Loyihalar</h2>
+        <p>Hali loyihalarim yo‘q, lekin tez orada qo‘shaman.</p>
+    </section>
+
+    <!-- Bog'lanish -->
+    <section id="boglanish" class="boglanish">
+        <h2>Bog‘lanish</h2>
+        <p>Email: <a href="mailto:joshqinbeksadullayev188@gmail.com">joshqinbeksadullayev188@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/Joshqinbek735" target="_blank">github.com/Joshqinbek735</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Jo'shqinbek Sa'dullayev Jasur o'g'li. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+    <!-- Dark/Light Mode Button -->
+    <button class="dark-mode-tugma" onclick="darkMode()">🌙</button>
+
+    <script>
+        function darkMode() {
+            document.body.classList.toggle("dark");
+            const btn = document.querySelector(".dark-mode-tugma");
+            if (document.body.classList.contains("dark")) {
+                btn.textContent = "☀️";
+            } else {
+                btn.textContent = "🌙";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
